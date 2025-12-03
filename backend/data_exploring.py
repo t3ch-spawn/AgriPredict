@@ -22,7 +22,12 @@ df_2025 = df[
     (df['date'].dt.year == 2025) 
 ]
 
-df_2025.to_csv('my_food_prices_2025.csv', index=False)
+# df_2025.to_csv('my_food_prices_2025.csv', index=False)
+# df_state = df_2025[df_2025["admin1"].str.strip().str.lower() == "adamawa"]
+# df_state.to_csv('food_prices_adamawa.csv', index=False)
+# top = df_state["commodity"].str.strip().str.lower().value_counts().idxmax()
+# count = df_state["commodity"].str.strip().str.lower().value_counts().max()
+# print(top, count)
 
 # Checking the unique commodities in 2025 in the dataset
 # print(df_2025['commodity'].unique())
@@ -51,7 +56,7 @@ df_2 = df_2.rename(columns={"admin1": "state"})
 # print(sorted(borno_commodities))
 
 
-product_list = ["Rice (local)", "Yam", "Tomatoes", "Oranges", "Beans (red)"]
+product_list = ["Rice (local)", "Yam", "Oranges", "Beans (red)"]
 
 product_state_list = [
     {"state": "Borno", "products": product_list},

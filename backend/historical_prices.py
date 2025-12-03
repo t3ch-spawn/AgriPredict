@@ -8,11 +8,11 @@ from typing import Dict
 
 
 def get_historical_prices(
-    commodity: str,
-    state: str,
-    start_date: str = "2024-11",
-    end_date: str = "2025-11",
-    data_path: str = './my_food_prices_avg.csv'
+    commodity,
+    state,
+    start_date = "2024-11",
+    end_date = "2025-11",
+    data_path = './my_food_prices_avg.csv'
 ) -> Dict:
     """
     Get historical prices for a product from start_date to end_date
@@ -43,7 +43,7 @@ def get_historical_prices(
     """
 
     # Load data
-    df = pd.read_csv(data_path)
+    df = pd.read_csv('./my_food_prices_avg.csv')
     df["date"] = pd.to_datetime(df["date"])
     df = df.sort_values("date")
 
@@ -111,3 +111,12 @@ def get_historical_prices(
             'volatility': round(filtered_data["price"].std(), 2)
         }
     }
+
+result1 = get_historical_prices(
+    commodity='Rice (local)',
+    state='Adamawa',
+    start_date='2024-11',
+    end_date='2025-11'
+)
+
+print(result1)

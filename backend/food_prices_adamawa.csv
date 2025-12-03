@@ -1,0 +1,129 @@
+date,admin1,admin2,market,market_id,latitude,longitude,category,commodity,commodity_id,unit,priceflag,pricetype,currency,price,usdprice
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,cereals and tubers,Maize flour,76,2.1 KG,aggregate,Retail,NGN,2300.0,1.48
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,3966.67,2.55
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,cereals and tubers,Sorghum,65,2.7 KG,aggregate,Retail,NGN,1600.0,1.03
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,cereals and tubers,Yam,99,2.5 KG,aggregate,Retail,NGN,2833.33,1.82
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,1833.33,1.18
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,"meat, fish and eggs",Meat (beef),141,KG,aggregate,Retail,NGN,5500.0,3.54
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.57
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,miscellaneous food,Sugar,97,500 G,aggregate,Retail,NGN,1106.67,0.71
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,oil and fats,Oil (palm),62,L,aggregate,Retail,NGN,2350.0,1.51
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,oil and fats,Oil (vegetable),96,L,aggregate,Retail,NGN,3375.0,2.17
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,3500.0,2.25
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,pulses and nuts,Beans (white),66,2.5 KG,aggregate,Retail,NGN,3233.33,2.08
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,pulses and nuts,Cowpeas,218,2.5 KG,aggregate,Retail,NGN,2900.0,1.86
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,4133.33,2.66
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,vegetables and fruits,Oranges,360,400 G,aggregate,Retail,NGN,333.33,0.21
+2025-01-15,Adamawa,Madagali,Madagali,3175,10.89,13.63,vegetables and fruits,Watermelons,716,2.1 KG,aggregate,Retail,NGN,2333.33,1.5
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,cereals and tubers,Millet,73,2.6 KG,aggregate,Retail,NGN,2300.0,1.48
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,cereals and tubers,Rice (imported),64,2.8 KG,aggregate,Retail,NGN,7000.0,4.5
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,3800.0,2.44
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,"meat, fish and eggs",Eggs,92,30 pcs,aggregate,Retail,NGN,8000.0,5.14
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,2000.0,1.29
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,"meat, fish and eggs",Meat (goat),451,KG,aggregate,Retail,NGN,5000.0,3.21
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.57
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,miscellaneous food,Sugar,97,500 G,aggregate,Retail,NGN,1000.0,0.64
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,oil and fats,Oil (palm),62,L,aggregate,Retail,NGN,2500.0,1.61
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,oil and fats,Oil (vegetable),96,L,aggregate,Retail,NGN,3750.0,2.41
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,3500.0,2.25
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,pulses and nuts,Cowpeas,218,2.5 KG,aggregate,Retail,NGN,2700.0,1.74
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,4200.0,2.7
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,vegetables and fruits,Bananas,254,1.3 KG,aggregate,Retail,NGN,500.0,0.32
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,vegetables and fruits,Onions,173,0.5 KG,aggregate,Retail,NGN,400.0,0.26
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,vegetables and fruits,Oranges,360,400 G,aggregate,Retail,NGN,400.0,0.26
+2025-01-15,Adamawa,Michika,Michika,3188,10.57,13.53,vegetables and fruits,Watermelons,716,2.1 KG,aggregate,Retail,NGN,2000.0,1.29
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Maize flour,76,2.1 KG,aggregate,Retail,NGN,1500.0,1.0
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Millet,73,2.6 KG,aggregate,Retail,NGN,1500.0,1.0
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Rice (imported),64,2.8 KG,aggregate,Retail,NGN,3500.0,2.33
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Sorghum,65,2.7 KG,aggregate,Retail,NGN,1500.0,1.0
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Yam,99,2.5 KG,aggregate,Retail,NGN,1500.0,1.0
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,2000.0,1.33
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,"meat, fish and eggs",Meat (beef),141,KG,aggregate,Retail,NGN,3500.0,2.33
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.67
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,miscellaneous food,Salt,185,250 G,aggregate,Retail,NGN,250.0,0.17
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,miscellaneous food,Sugar,97,500 G,aggregate,Retail,NGN,1100.0,0.73
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,3000.0,2.0
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,pulses and nuts,Cowpeas,218,2.5 KG,aggregate,Retail,NGN,2300.0,1.53
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Onions,173,0.5 KG,aggregate,Retail,NGN,500.0,0.33
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Oranges,360,400 G,aggregate,Retail,NGN,500.0,0.33
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Spinach,404,300 G,aggregate,Retail,NGN,100.0,0.067
+2025-09-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Watermelons,716,2.1 KG,aggregate,Retail,NGN,1200.0,0.8
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Maize flour,76,2.1 KG,aggregate,Retail,NGN,1500.0,1.02
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Millet,73,2.6 KG,aggregate,Retail,NGN,1500.0,1.02
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Rice (imported),64,2.8 KG,aggregate,Retail,NGN,3500.0,2.39
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,3000.0,2.05
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Sorghum,65,2.7 KG,aggregate,Retail,NGN,1500.0,1.02
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,cereals and tubers,Yam,99,2.5 KG,aggregate,Retail,NGN,1868.42,1.27
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,"meat, fish and eggs",Meat (goat),451,KG,aggregate,Retail,NGN,2000.0,1.36
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.73
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,oil and fats,Oil (vegetable),96,L,aggregate,Retail,NGN,2750.0,1.88
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,pulses and nuts,Cowpeas,218,2.5 KG,aggregate,Retail,NGN,2300.0,1.57
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,4500.0,3.07
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Bananas,254,1.3 KG,aggregate,Retail,NGN,500.0,0.34
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Onions,173,0.5 KG,aggregate,Retail,NGN,500.0,0.34
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Oranges,360,400 G,aggregate,Retail,NGN,500.0,0.34
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Spinach,404,300 G,aggregate,Retail,NGN,100.0,0.068
+2025-10-15,Adamawa,Girie,Gombi,10670,10.17,12.74,vegetables and fruits,Tomatoes,114,0.5 KG,aggregate,Retail,NGN,300.0,0.2
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,cereals and tubers,Maize flour,76,2.1 KG,aggregate,Retail,NGN,800.0,0.55
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,cereals and tubers,Rice (imported),64,2.8 KG,aggregate,Retail,NGN,5000.0,3.41
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,2000.0,1.36
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Eggs,92,30 pcs,aggregate,Retail,NGN,6000.0,4.09
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,2500.0,1.71
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Meat (beef),141,KG,aggregate,Retail,NGN,7000.0,4.77
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Meat (goat),451,KG,aggregate,Retail,NGN,6500.0,4.43
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.73
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,miscellaneous food,Salt,185,250 G,aggregate,Retail,NGN,250.0,0.17
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,oil and fats,Oil (palm),62,L,aggregate,Retail,NGN,2000.0,1.36
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,2000.0,1.36
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,2500.0,1.71
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Bananas,254,1.3 KG,aggregate,Retail,NGN,250.0,0.17
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Onions,173,0.5 KG,aggregate,Retail,NGN,400.0,0.27
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Spinach,404,300 G,aggregate,Retail,NGN,50.0,0.034
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Tomatoes,114,0.5 KG,aggregate,Retail,NGN,400.0,0.27
+2025-10-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Watermelons,716,2.1 KG,aggregate,Retail,NGN,3000.0,2.05
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Millet,73,2.6 KG,aggregate,Retail,NGN,1000.0,0.68
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,1950.0,1.33
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Sorghum,65,2.7 KG,aggregate,Retail,NGN,1000.0,0.68
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Yam,99,2.5 KG,aggregate,Retail,NGN,3500.0,2.39
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,"meat, fish and eggs",Eggs,92,30 pcs,aggregate,Retail,NGN,5700.0,3.89
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,2000.0,1.36
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.73
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,miscellaneous food,Salt,185,250 G,aggregate,Retail,NGN,250.0,0.17
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,miscellaneous food,Sugar,97,500 G,aggregate,Retail,NGN,800.0,0.55
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,oil and fats,Oil (vegetable),96,L,aggregate,Retail,NGN,3600.0,2.46
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,2000.0,1.36
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Cowpeas,218,2.5 KG,aggregate,Retail,NGN,1525.0,1.04
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,4000.0,2.73
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,vegetables and fruits,Bananas,254,1.3 KG,aggregate,Retail,NGN,500.0,0.34
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,vegetables and fruits,Spinach,404,300 G,aggregate,Retail,NGN,100.0,0.068
+2025-10-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,vegetables and fruits,Tomatoes,114,0.5 KG,aggregate,Retail,NGN,400.0,0.27
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,cereals and tubers,Millet,73,2.6 KG,aggregate,Retail,NGN,800.0,0.52
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,2000.0,1.31
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,cereals and tubers,Yam,99,2.5 KG,aggregate,Retail,NGN,3000.0,1.96
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Eggs,92,30 pcs,aggregate,Retail,NGN,6000.0,3.92
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,2500.0,1.63
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,"meat, fish and eggs",Meat (beef),141,KG,aggregate,Retail,NGN,7000.0,4.57
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,milk and dairy,Milk (powder),238,400 G,aggregate,Retail,NGN,4000.0,2.61
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,oil and fats,Oil (vegetable),96,L,aggregate,Retail,NGN,2200.0,1.44
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,2000.0,1.31
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,pulses and nuts,Beans (white),66,2.5 KG,aggregate,Retail,NGN,1800.0,1.18
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,2500.0,1.63
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Onions,173,0.5 KG,aggregate,Retail,NGN,400.0,0.26
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Oranges,360,400 G,aggregate,Retail,NGN,400.0,0.26
+2025-11-15,Adamawa,Hong,Mubi North,10668,10.38,13.31,vegetables and fruits,Spinach,404,300 G,aggregate,Retail,NGN,50.0,0.033
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Rice (imported),64,2.8 KG,aggregate,Retail,NGN,4000.0,2.61
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Rice (local),71,2.7 KG,aggregate,Retail,NGN,1950.0,1.27
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Sorghum,65,2.7 KG,aggregate,Retail,NGN,1000.0,0.65
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,cereals and tubers,Yam,99,2.5 KG,aggregate,Retail,NGN,3500.0,2.29
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,"meat, fish and eggs",Eggs,92,30 pcs,aggregate,Retail,NGN,5700.0,3.72
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,"meat, fish and eggs",Fish,139,KG,aggregate,Retail,NGN,2000.0,1.31
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,"meat, fish and eggs",Meat (beef),141,KG,aggregate,Retail,NGN,6000.0,3.92
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,miscellaneous food,Sugar,97,500 G,aggregate,Retail,NGN,800.0,0.52
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,oil and fats,Oil (vegetable),96,L,aggregate,Retail,NGN,3600.0,2.35
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Beans (red),78,2.5 KG,aggregate,Retail,NGN,2000.0,1.31
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Beans (white),66,2.5 KG,aggregate,Retail,NGN,1400.0,0.91
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Cowpeas,218,2.5 KG,aggregate,Retail,NGN,1525.0,1.0
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,pulses and nuts,Groundnuts,153,2.2 KG,aggregate,Retail,NGN,4000.0,2.61
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,vegetables and fruits,Bananas,254,1.3 KG,aggregate,Retail,NGN,500.0,0.33
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,vegetables and fruits,Spinach,404,300 G,aggregate,Retail,NGN,100.0,0.065
+2025-11-15,Adamawa,Numan,Ngalang,3182,9.46,12.03,vegetables and fruits,Tomatoes,114,0.5 KG,aggregate,Retail,NGN,400.0,0.26

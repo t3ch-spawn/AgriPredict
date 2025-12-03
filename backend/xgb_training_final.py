@@ -17,50 +17,6 @@ df["date"] = pd.to_datetime(df["date"])
 
 fig, ax = plt.subplots(figsize=(14,6))
 
-def plot_across_states(df, product, states):
-    plt.figure(figsize=(14,6))
-    # df.plot(ax=ax, label="")
-    for st in states:
-        subset = df[(df["state"] == st) & (df["commodity"] == product)].sort_values("date")
-        plt.plot(subset["date"], subset["price"], label=st)
-
-    plt.title(f"Price of {product} Across States")
-    plt.xlabel("Date")
-    plt.ylabel("Price")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-
-def plot_state_product_trends(df, state, products, date_col="date"):
-
-    # Filter
-    data = df[
-        (df["state"] == state) &
-        (df["commodity"].isin(products))
-    ]
-
-    # Sort by date
-    data = data.sort_values(date_col)
-
-    # Create the plot
-    plt.figure(figsize=(12, 6))
-
-    for p in products:
-        subset = data[data["commodity"] == p]
-        plt.plot(
-            subset[date_col],
-            subset["price"],
-            label=p,
-            linewidth=2
-        )
-
-    plt.title(f"Price Trend for Selected Commodities in {state}")
-    plt.xlabel("Date")
-    plt.ylabel("Price")
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.show()
 
 # plot_state_product_trends(
 #     df=df,
@@ -157,9 +113,9 @@ NORMAL commodities have stable, predictable patterns where:
 - Model achieves good fit (R² >= 0.5)
 """
 
-print("="*80)
-print("STEP 1: COMMODITY VOLATILITY CLASSIFICATION")
-print("="*80)
+# print("="*80)
+# print("STEP 1: COMMODITY VOLATILITY CLASSIFICATION")
+# print("="*80)
 
 all_commodities = df[df["date"].dt.year == 2025]['commodity'].unique()
 normal_commodities = []
@@ -256,24 +212,24 @@ for commodity in all_commodities:
         'reasons': '; '.join(reasons) if reasons else 'Stable commodity'
     })
     
-    print(f"\n{status} {commodity}")
-    print(f"  Volatility Change: {volatility_change:.1f}% (train_std={train_std:.0f} → test_std={test_std:.0f})")
-    print(f"  Price Shift: {price_shift:.1f}% (₦{train_mean:.0f} → ₦{test_mean:.0f})")
-    print(f"  Coefficient of Variation: {test_cv:.3f} (measures relative price fluctuation)")
-    print(f"  Model R² on validation: {r2_val:.4f}")
-    if reasons:
-        print(f"  Classification Reasons: {'; '.join(reasons)}")
+#     print(f"\n{status} {commodity}")
+#     print(f"  Volatility Change: {volatility_change:.1f}% (train_std={train_std:.0f} → test_std={test_std:.0f})")
+#     print(f"  Price Shift: {price_shift:.1f}% (₦{train_mean:.0f} → ₦{test_mean:.0f})")
+#     print(f"  Coefficient of Variation: {test_cv:.3f} (measures relative price fluctuation)")
+#     print(f"  Model R² on validation: {r2_val:.4f}")
+#     if reasons:
+#         print(f"  Classification Reasons: {'; '.join(reasons)}")
 
-print(f"\n{'='*80}")
-print(f"Classification Summary:")
-print(f"  🟢 NORMAL: {normal_commodities}")
-print(f"  🔴 VOLATILE: {volatile_commodities}")
-print(f"{'='*80}\n")
+# print(f"\n{'='*80}")
+# print(f"Classification Summary:")
+# print(f"  🟢 NORMAL: {normal_commodities}")
+# print(f"  🔴 VOLATILE: {volatile_commodities}")
+# print(f"{'='*80}\n")
 
 # ==================== STEP 2: TRAIN AND SAVE MODELS ====================
-print("="*80)
-print("STEP 2: TRAINING AND SAVING MODELS")
-print("="*80)
+# print("="*80)
+# print("STEP 2: TRAINING AND SAVING MODELS")
+# print("="*80)
 
 model_dir = 'saved_models'
 os.makedirs(model_dir, exist_ok=True)
@@ -306,7 +262,7 @@ for commodity in normal_commodities:
             'learning_rate': 0.05
         }
         
-        print(f"✓ Trained & saved: {commodity} (NORMAL model)")
+        # print(f"✓ Trained & saved: {commodity} (NORMAL model)")
 
 # Process volatile commodities with calibration
 for commodity in volatile_commodities:
@@ -346,7 +302,7 @@ for commodity in volatile_commodities:
             'mean_diff': float(mean_diff)
         }
         
-        print(f"✓ Trained & saved: {commodity} (VOLATILE model with calibration)")
+        # print(f"✓ Trained & saved: {commodity} (VOLATILE model with calibration)")
 
 # Save metadata
 metadata_path = os.path.join(model_dir, 'model_metadata.pkl')
@@ -355,9 +311,9 @@ print(f"\n✓ All models saved to '{model_dir}/' directory")
 print(f"{'='*80}\n")
 
 # ==================== STEP 3: GENERATE 2025 PREDICTIONS ====================
-print("="*80)
-print("STEP 3: GENERATING 2025 PREDICTIONS")
-print("="*80)
+# print("="*80)
+# print("STEP 3: GENERATING 2025 PREDICTIONS")
+# print("="*80)
 
 predictions_list = []
 
@@ -415,10 +371,10 @@ output_df['error_pct'] = (output_df['error'] / output_df['price'] * 100).round(2
 # Save to CSV
 output_df.to_csv('2025_price_predictions.csv', index=False)
 
-print(f"✓ CSV saved as '2025_price_predictions.csv'")
-print(f"Total predictions: {len(output_df)}\n")
-print(f"First 10 rows:")
-print(output_df.head(10))
+# print(f"✓ CSV saved as '2025_price_predictions.csv'")
+# print(f"Total predictions: {len(output_df)}\n")
+# print(f"First 10 rows:")
+# print(output_df.head(10))
 
 
 # ==================== STEP 4: FUTURE PREDICTION FUNCTION ====================
@@ -499,98 +455,152 @@ def _build_feature_vector_from_history(prices_history, df, state, commodity, tar
 
 def predict_future_price(commodity, state, year, month, use_calibration=True):
     """
-    Predict a single (year,month) for commodity,state — uses only most recent history.
-    Returns dict similar to before.
+    Predict a single (year,month) for commodity,state.
+    For future years beyond current data, uses recursive prediction.
     """
     if commodity not in trained_models:
         return {'status': 'ERROR', 'message': f'Model for {commodity} not found. Available: {list(trained_models.keys())}'}
-
-    # Pull recent observed series for this state-commodity
-    recent_prices = _get_recent_series_for_state_commodity(df, state, commodity, n=12)
-    if recent_prices.size == 0:
+    
+    # Get the most recent date in historical data
+    recent_data = df[(df['state'] == state) & (df['commodity'] == commodity)].sort_values('date')
+    if len(recent_data) == 0:
         return {'status': 'ERROR', 'message': f'No historical data found for {commodity} in {state}'}
-
-    # Build feature vector using the target month (so month-dependent seasonality appears)
-    X_future = _build_feature_vector_from_history(recent_prices, df, state, commodity, month).reshape(1, -1)
-
-    model = trained_models[commodity]
-    pred = float(model.predict(X_future)[0])
-
-    # Calibration: minimal safe approach — apply additive mean_diff if saved.
-    metadata = model_metadata.get(commodity, {'type':'normal'})
-    if use_calibration and metadata.get('type') == 'volatile':
-        # If training saved pred_mean_val you should use full calibration:
-        # prediction = (prediction - pred_mean_val) * variance_scale + pred_mean_val + mean_diff
-        # but since pred_mean_val isn't stored in your current metadata, apply additive bias only:
-        mean_diff = metadata.get('mean_diff', 0.0)
-        pred = pred + mean_diff
-
-    result = {
-        'status': 'SUCCESS',
-        'commodity': commodity,
-        'state': state,
-        'year': year,
-        'month': month,
-        'predicted_price': round(pred, 2),
-        'recent_price': round(float(recent_prices[-1]), 2),
-        'model_type': metadata.get('type', 'unknown'),
-        'confidence': 'High' if metadata.get('type') == 'normal' else 'Medium (Volatile commodity)'
-    }
-    return result
-
-def predict_future_year(commodity, state, year, start_month=1):
-    """
-    Recursively predict 12 months starting at start_month for given year.
-    Returns a list of dicts for each month.
-    The function uses previous predictions as lags for the next month.
-    """
-    if commodity not in trained_models:
-        return {'status': 'ERROR', 'message': f'Model for {commodity} not found.'}
-
-    # Seed history with observed series (most recent last)
-    history = _get_recent_series_for_state_commodity(df, state, commodity, n=12).tolist()
-    if len(history) == 0:
-        return {'status': 'ERROR', 'message': f'No historical data found for {commodity} in {state}'}
-
-    results = []
-    month = start_month
-    for i in range(12):
-        # Build features using current history and target month
-        X_future = _build_feature_vector_from_history(np.array(history), df, state, commodity, month).reshape(1, -1)
+    
+    last_historical_date = recent_data['date'].max()
+    last_year = last_historical_date.year
+    last_month = last_historical_date.month
+    
+    # Calculate months from last historical date to target date
+    target_date = pd.Timestamp(year=year, month=month, day=1)
+    months_ahead = (target_date.year - last_year) * 12 + (target_date.month - last_month)
+    
+    # If predicting within historical range or just 1-2 months ahead, use direct prediction
+    if months_ahead <= 2:
+        recent_prices = _get_recent_series_for_state_commodity(df, state, commodity, n=12)
+        X_future = _build_feature_vector_from_history(recent_prices, df, state, commodity, month).reshape(1, -1)
+        
         model = trained_models[commodity]
         pred = float(model.predict(X_future)[0])
-
-        # minimal calibration as above
-        metadata = model_metadata.get(commodity, {'type': 'normal'})
-        if metadata.get('type') == 'volatile':
+        
+        metadata = model_metadata.get(commodity, {'type':'normal'})
+        if use_calibration and metadata.get('type') == 'volatile':
             mean_diff = metadata.get('mean_diff', 0.0)
             pred = pred + mean_diff
-
-        results.append({
+        
+        return {
+            'status': 'SUCCESS',
+            'commodity': commodity,
+            'state': state,
             'year': year,
             'month': month,
             'predicted_price': round(pred, 2),
-            'used_recent_price': round(float(history[-1]), 2),
-            'model_type': metadata.get('type', 'unknown')
+            'recent_price': round(float(recent_prices[-1]), 2),
+            # 'model_type': metadata.get('type', 'unknown'),
+            # 'confidence': 'High' if metadata.get('type') == 'normal' else 'Medium (Volatile commodity)'
+        }
+    
+    # For predictions far in the future, recursively predict month by month
+    else:
+        print('far ahead')
+        # Start with historical prices
+        history = _get_recent_series_for_state_commodity(df, state, commodity, n=12).tolist()
+        
+        # Predict month by month until we reach target date
+        current_year = last_year
+        current_month = last_month + 1
+        if current_month > 12:
+            current_month = 1
+            current_year += 1
+        
+        predicted_price = None
+        
+        while (current_year < year) or (current_year == year and current_month <= month):
+            # Build features using current history
+            X_future = _build_feature_vector_from_history(np.array(history), df, state, commodity, current_month).reshape(1, -1)
+            model = trained_models[commodity]
+            pred = float(model.predict(X_future)[0])
+            
+            # Apply calibration
+            metadata = model_metadata.get(commodity, {'type': 'normal'})
+            if use_calibration and metadata.get('type') == 'volatile':
+                mean_diff = metadata.get('mean_diff', 0.0)
+                pred = pred + mean_diff
+            
+            # If this is our target month/year, save it
+            if current_year == year and current_month == month:
+                predicted_price = pred
+            
+            # Add prediction to history for next iteration
+            history.append(pred)
+            if len(history) > 12:
+                history = history[-12:]
+            
+            # Move to next month
+            current_month += 1
+            if current_month > 12:
+                current_month = 1
+                current_year += 1
+        
+        return {
+            'status': 'SUCCESS',
+            'commodity': commodity,
+            'state': state,
+            'year': year,
+            'month': month,
+            'predicted_price': round(predicted_price, 2),
+            'recent_price': round(float(_get_recent_series_for_state_commodity(df, state, commodity, n=1)[-1]), 2),
+            # 'model_type': metadata.get('type', 'unknown'),
+            # 'confidence': 'Low (Far future prediction)' if months_ahead > 12 else 'Medium'
+        }
+
+def predict_future_year(commodity, state, year, start_month=1):
+    if commodity not in trained_models:
+        return [{'status': 'ERROR', 'message': f'Model for {commodity} not found.'}]
+    
+    # Check if historical data exists
+    recent_data = df[(df['state'] == state) & (df['commodity'] == commodity)]
+    if len(recent_data) == 0:
+        return [{'status': 'ERROR', 'message': f'No historical data found for {commodity} in {state}'}]
+    
+    results = []
+    current_month = start_month
+    current_year = year
+    
+    # Predict 12 consecutive months
+    for i in range(12):
+        # Use predict_future_price for this month
+        prediction = predict_future_price(
+            commodity=commodity,
+            state=state,
+            year=current_year,
+            month=current_month,
+            use_calibration=True
+        )
+        
+        # Check if prediction was successful
+        if prediction['status'] == 'ERROR':
+            return [prediction]  # Return error immediately
+        
+        # Add to results
+        results.append({
+            'year': current_year,
+            'month': current_month,
+            'date': f"{current_year}-{current_month:02d}",
+            'predicted_price': prediction['predicted_price'],
+            # 'confidence': prediction['confidence'],
+            # 'model_type': prediction['model_type']
         })
-
-        # Append this prediction to history so next month can use it as lag
-        history.append(pred)
-        # keep only last 12
-        if len(history) > 12:
-            history = history[-12:]
-
-        # increment month/year
-        month += 1
-        if month > 12:
-            month = 1
-            year += 1
-
+        
+        # Move to next month
+        current_month += 1
+        if current_month > 12:
+            current_month = 1
+            current_year += 1
+    
     return results
 
 
-
-def pair_statistics(output_df, state, commodity):
+def pair_statistics(state, commodity):
     """
     Compute statistical and error metrics for a single (state, commodity) pair
     using the already-loaded output_df, which MUST contain:
@@ -638,27 +648,63 @@ def pair_statistics(output_df, state, commodity):
     # MAE relative to the actual mean
     pct_error_mean = (mae / mean_price * 100.0) if mean_price != 0 else float("nan")
 
+    r2 = float(r2_score(actual, pred))
+
+    df_filtered = output_df[
+        output_df["state"].str.strip().str.lower() == str(state).strip().lower()
+    ]
+    df_filtered = df_filtered[
+        df_filtered["commodity"].str.strip().str.lower() == str(commodity).strip().lower()
+    ].copy()
+
+    if df_filtered.empty:
+        return []
+
+    # ensure date column is datetime
+    df_filtered["date"] = pd.to_datetime(df_filtered["date"])
+
+    # create a month label for x-axis (e.g., "Jan 2025")
+    df_filtered["month_label"] = df_filtered["date"].dt.strftime("%b %Y")
+    # also create a sortable month key (YYYY-MM) to sort the rows
+    df_filtered["month_key"] = df_filtered["date"].dt.strftime("%Y-%m")
+
+    # if you expect multiple rows per month, aggregate by month_key (take mean)
+    agg = (
+        df_filtered
+        .groupby(["month_key", "month_label"], as_index=False)
+        .agg(
+            actual_price = ("price", "mean"),
+            predicted_price = ("prediction", "mean")
+        )
+        .sort_values("month_key")
+    )
+
+    # convert to list of dicts (suitable to JSONify and send to frontend)
+    graphResult = agg[["month_label", "actual_price", "predicted_price"]].rename(
+        columns={"month_label": "month"}
+    ).to_dict(orient="records")
+
     # Print nicely
-    print(f"\n📌 Statistics for {commodity} in {state} (N = {n})")
-    print("--------------------------------------------------")
-    print(f"Price statistics:")
-    print(f"  Mean price     : {mean_price:.2f}")
-    print(f"  Median price   : {median_price:.2f}")
-    print(f"  Std deviation  : {std_price:.2f}")
-    print(f"  Skewness       : {skew_price:.3f}\n")
+    # print(f"\n📌 Statistics for {commodity} in {state} (N = {n})")
+    # print("--------------------------------------------------")
+    # print(f"Price statistics:")
+    # print(f"  Mean price     : {mean_price:.2f}")
+    # print(f"  Median price   : {median_price:.2f}")
+    # print(f"  Std deviation  : {std_price:.2f}")
+    # print(f"  Skewness       : {skew_price:.3f}\n")
 
-    print("Error metrics (model performance):")
-    print(f"  MAE            : {mae:.3f}")
-    print(f"  RMSE           : {rmse:.3f}")
-    print(f"  MAPE           : {mape_pct:.2f}%")
-    print(f"  MAE as % mean  : {pct_error_mean:.2f}%\n")
+    # print("Error metrics (model performance):")
+    # print(f"  MAE            : {mae:.3f}")
+    # print(f"  RMSE           : {rmse:.3f}")
+    # print(f"  MAPE           : {mape_pct:.2f}%")
+    # print(f"  MAE as % mean  : {pct_error_mean:.2f}%\n")
 
-    print("Residual summary:")
-    print(f"  Mean error     : {mean_error:.3f}")
-    print(f"  Median error   : {median_error:.3f}")
-    print(f"  Std error      : {std_error:.3f}")
-    print(f"  MAD error      : {mad_error:.3f}")
-    print("--------------------------------------------------\n")
+    # print("Residual summary:")
+    # print(f"  Mean error     : {mean_error:.3f}")
+    # print(f"  Median error   : {median_error:.3f}")
+    # print(f"  Std error      : {std_error:.3f}")
+    # print(f"  MAD error      : {mad_error:.3f}")
+    # print("--------------------------------------------------\n")
 
     # Return values as dictionary
     return {
@@ -671,17 +717,19 @@ def pair_statistics(output_df, state, commodity):
         "skew_price": skew_price,
         "mae": mae,
         "rmse": rmse,
+        "r_2": r2,
         "mape_pct": mape_pct,
         "pct_error_mean": pct_error_mean,
         "mean_error": mean_error,
         "median_error": median_error,
         "std_error": std_error,
-        "mad_error": mad_error
+        "mad_error": mad_error,
+        "graph": graphResult
     }
 
 
-for st in output_df["state"].unique():
-    pair_statistics(output_df, st, "Yam")
+# for st in output_df["state"].unique():
+#     pair_statistics(output_df, st, "Yam")
 
 
 # ==================== EXAMPLE USAGE ====================
@@ -691,27 +739,27 @@ print("="*80 + "\n")
 
 # Example predictions
 examples = [
-    ('Rice (local)', 'Yobe', 2026, 3),
-    ('Rice (local)', 'Yobe', 2026, 4),
-    ('Rice (local)', 'Yobe', 2026, 5),
-    ('Rice (local)', 'Yobe', 2026, 6),
+    ('Rice (local)', 'Borno', 2026, 1),
+    ('Rice (local)', 'Borno', 2026, 4),
+    # ('Rice (local)', 'Borno', 2027, 4),
+    # ('Rice (local)', 'Yobe', 2026, 6),
     # ('Yam', 'Borno', 2026, 6),
     # ('Beans (red)', 'Yobe', 2026, 9),
     # ('Oranges', 'Adamawa', 2027, 1),
     # ('Tomatoes', 'Borno', 2027, 11)
 ]
 
-for commodity, state, year, month in examples:
-    result = predict_future_price(commodity, state, year, month)
-    print(f"{result['commodity']} in {result['state']} ({year}-{result['month']:02d}):")
-    print(f"  Predicted Price: ₦{result['predicted_price']}")
-    print(f"  Recent Price: ₦{result['recent_price']}")
-    print(f"  Model Type: {result['model_type']}")
-    print(f"  Confidence: {result['confidence']}\n")
+# for commodity, state, year, month in examples:
+#     result = predict_future_price(commodity, state, year, month)
+#     print(f"{result['commodity']} in {result['state']} ({year}-{result['month']:02d}):")
+#     print(f"  Predicted Price: ₦{result['predicted_price']}")
+#     print(f"  Recent Price: ₦{result['recent_price']}")
+#     # print(f"  Model Type: {result['model_type']}")
+#     # print(f"  Confidence: {result['confidence']}\n")
 
-print("="*80)
-print("✓ Pipeline complete! Models saved, predictions generated.")
-print("="*80)
+# print("="*80)
+# print("✓ Pipeline complete! Models saved, predictions generated.")
+# print("="*80)
 
 
 sns.set_theme(style="whitegrid")
@@ -892,9 +940,17 @@ def plot_error_distribution(output_df,
 
     plt.tight_layout()
 
-    if save_path:
-        fig.savefig(save_path, dpi=200)
-        print(f"Saved figure to: {save_path}")
+    output_dir = "plot_images"
+    os.makedirs(output_dir, exist_ok=True)
+
+# If no save_path was provided, auto-generate one
+    if not save_path:
+        # safe filename using commodity + state + error type
+        filename = f"{commodity}_{state}_{error_type}_errors.png".replace(" ", "_")
+        save_path = os.path.join(output_dir, filename)
+
+# Save figure
+    fig.savefig(save_path, dpi=200)
 
     if show_plot:
         plt.show()
@@ -918,4 +974,4 @@ def plot_error_distribution(output_df,
 
 
 
-res = plot_error_distribution(output_df, "Rice (local)", "Borno", error_type="percent", bins=25)
+# res = plot_error_distribution(output_df, "Yam", "Borno", error_type="percent", bins=25)

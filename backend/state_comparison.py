@@ -5,12 +5,12 @@ Compare forecasted prices across multiple states with analytics
 
 import pandas as pd
 from typing import Dict, List
-from .forecast import forecast_year
+from xgb_training_final import predict_future_year as forecast_year
 
 
 def compare_states_forecast(
     commodity: str,
-    states: List[str],
+    states: List[str] ,
     target_year: int,
     data_path: str = './my_food_prices_avg.csv',
     model_dir: str = 'saved_models'
@@ -52,17 +52,19 @@ def compare_states_forecast(
     all_prices = []
 
     for state in states:
-        forecast = forecast_year(commodity, state, target_year, data_path, model_dir)
-
-        if forecast['status'] == 'SUCCESS':
-            state_forecasts.append({
-                'state': state,
-                'data': forecast['data']
-            })
-
-            # Collect all prices for analytics
-            prices = [float(d['price']) for d in forecast['data']]
-            all_prices.extend([(state, month, price) for month, price in enumerate(prices, 1)])
+        forecast = forecast_year(commodity, state, target_year)
+        state_forecasts.append({
+              'state': state,
+              'data': forecast
+          })
+          # Collect all prices for analytics
+        prices = [float(d['predicted_price']) for d in forecast]
+        all_prices.extend([
+        (state, d['month'], float(d['predicted_price']))
+         for d in forecast
+        ])
+      
+          
 
     if len(state_forecasts) == 0:
         return {
@@ -114,3 +116,23 @@ def compare_states_forecast(
             'savings_potential': round((most_expensive_avg_price - cheapest_avg_price) / most_expensive_avg_price * 100, 2)
         }
     }
+
+result3 = compare_states_forecast(
+    commodity='Rice (local)',
+    states=['Yobe', 'Adamawa', 'Borno'],
+    target_year=2026
+)
+
+print(result3)
+
+# if result2['status'] == 'SUCCESS':
+#        print(f"Forecast for {result2['year']}")
+#        print(f"Average Forecast: NGN{result2['statistics']['average_forecast']}")
+#        print(f"Max Forecast: NGN{result2['statistics']['max_forecast']}")
+#        print(f"Min Forecast: NGN{result2['statistics']['min_forecast']}")
+#        print(f"Model Type: {result2['statistics']['model_type']}")
+#        print(f"\nMonthly forecasts:")
+#        for item in result2['data'][:6]:  # Show first 6 months
+#            print(f"  {item['date']}: NGN{item['price']}")
+# else:
+#        print(f"Error: {result2['message']}")
